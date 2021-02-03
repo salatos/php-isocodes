@@ -51,17 +51,26 @@ class HistoricCountries extends AbstractNotPartitionedDatabase
         ];
     }
 
-    public function getByAlpha4(string $code): ?Country
+    /**
+     * @return Country|null
+     */
+    public function getByAlpha4(string $code)
     {
         return $this->find('alpha_4', $code);
     }
 
-    public function getByAlpha3(string $code): ?Country
+    /**
+     * @return Country|null
+     */
+    public function getByAlpha3(string $code)
     {
         return $this->find('alpha_3', $code);
     }
 
-    public function getByAlpha2(string $code): ?Country
+    /**
+     * @return Country|null
+     */
+    public function getByAlpha2(string $code)
     {
         return $this->find('alpha_2', $code);
     }
@@ -76,7 +85,7 @@ class HistoricCountries extends AbstractNotPartitionedDatabase
      *
      * @throws \TypeError
      */
-    public function getByNumericCode($code): ?Country
+    public function getByNumericCode($code)
     {
         if (!is_numeric($code)) {
             throw new \TypeError('Argument must be int or string');

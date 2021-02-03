@@ -25,7 +25,7 @@ class SymfonyTranslationDriver implements TranslationDriverInterface
         $this->translator->addLoader('mo', new MoFileLoader());
     }
 
-    public function configureDirectory(string $isoNumber, string $directory): void
+    public function configureDirectory(string $isoNumber, string $directory)
     {
         $locales = [$this->locale];
         if (strpos($this->locale, '_') === 2) {
@@ -71,7 +71,7 @@ class SymfonyTranslationDriver implements TranslationDriverInterface
      *
      * @param string $locale
      */
-    public function setLocale(string $locale): void
+    public function setLocale(string $locale)
     {
         $this->locale = $locale;
 

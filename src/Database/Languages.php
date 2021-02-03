@@ -49,12 +49,18 @@ class Languages extends AbstractNotPartitionedDatabase implements LanguagesInter
         ];
     }
 
-    public function getByAlpha2(string $alpha2): ?Language
+    /**
+     * @return Language|null
+     */
+    public function getByAlpha2(string $alpha2)
     {
         return $this->find('alpha_2', $alpha2);
     }
 
-    public function getByAlpha3(string $alpha3): ?Language
+    /**
+     * @return Language|null
+     */
+    public function getByAlpha3(string $alpha3)
     {
         return $this->find('alpha_3', $alpha3);
     }

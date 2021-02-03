@@ -47,7 +47,10 @@ class Scripts extends AbstractNotPartitionedDatabase
         ];
     }
 
-    public function getByAlpha4(string $alpha4): ?Script
+    /**
+     * @return Script|null
+     */
+    public function getByAlpha4(string $alpha4)
     {
         return $this->find('alpha_4', $alpha4);
     }
@@ -62,7 +65,7 @@ class Scripts extends AbstractNotPartitionedDatabase
      *
      * @throws \TypeError
      */
-    public function getByNumericCode($code): ?Script
+    public function getByNumericCode($code)
     {
         if (!is_numeric($code)) {
             throw new \TypeError('Argument must be int or string');

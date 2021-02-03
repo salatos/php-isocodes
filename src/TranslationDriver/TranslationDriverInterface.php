@@ -6,10 +6,10 @@ namespace Sokil\IsoCodes\TranslationDriver;
 
 interface TranslationDriverInterface extends TranslatorInterface
 {
-    public function configureDirectory(string $isoNumber, string $directory): void;
+    public function configureDirectory(string $isoNumber, string $directory);
 
     /**
      * @param string $locale
      */
-    public function setLocale(string $locale): void;
+    public function setLocale(string $locale);
 }

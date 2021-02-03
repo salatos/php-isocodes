@@ -46,7 +46,10 @@ class Currencies extends AbstractNotPartitionedDatabase
         ];
     }
 
-    public function getByLetterCode(string $code): ?Currency
+    /**
+     * @return Currency|null
+     */
+    public function getByLetterCode(string $code)
     {
         return $this->find('alpha_3', $code);
     }
@@ -61,7 +64,7 @@ class Currencies extends AbstractNotPartitionedDatabase
      *
      * @throws \TypeError
      */
-    public function getByNumericCode($code): ?Currency
+    public function getByNumericCode($code)
     {
         if (!is_numeric($code)) {
             throw new \TypeError('Argument must be int or string');

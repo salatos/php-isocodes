@@ -9,12 +9,12 @@ namespace Sokil\IsoCodes\TranslationDriver;
  */
 class DummyDriver implements TranslationDriverInterface
 {
-    public function configureDirectory(string $isoNumber, string $directory): void
+    public function configureDirectory(string $isoNumber, string $directory)
     {
         // do nothing
     }
 
-    public function setLocale(string $locale): void
+    public function setLocale(string $locale)
     {
         // do nothing
     }

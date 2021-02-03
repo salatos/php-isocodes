@@ -61,7 +61,7 @@ class Country
         string $alpha3,
         string $alpha2,
         string $withdrawalDate,
-        ?string $numericCode = null
+        string $numericCode = null
     ) {
         $this->translator = $translator;
         $this->name = $name;
@@ -109,7 +109,10 @@ class Country
         return $this->withdrawalDate;
     }
 
-    public function getNumericCode(): ?string
+    /**
+     * @return string|null
+     */
+    public function getNumericCode()
     {
         return $this->numericCode;
     }

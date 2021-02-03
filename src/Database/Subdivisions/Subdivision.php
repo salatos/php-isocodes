@@ -49,7 +49,7 @@ class Subdivision
         string $name,
         string $code,
         string $type,
-        ?string $parent = null
+        string $parent = null
     ) {
         $this->translator = $translator;
         $this->name = $name;
@@ -85,7 +85,10 @@ class Subdivision
         return $this->type;
     }
 
-    public function getParent(): ?string
+    /**
+     * @return string|null
+     */
+    public function getParent()
     {
         return $this->parent;
     }

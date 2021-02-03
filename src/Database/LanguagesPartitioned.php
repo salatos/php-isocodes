@@ -35,7 +35,10 @@ class LanguagesPartitioned extends AbstractPartitionedDatabase implements Langua
         );
     }
 
-    public function getByAlpha2(string $alpha2): ?Language
+    /**
+     * @return Language|null
+     */
+    public function getByAlpha2(string $alpha2)
     {
         $language = null;
 
@@ -48,7 +51,10 @@ class LanguagesPartitioned extends AbstractPartitionedDatabase implements Langua
         return $language;
     }
 
-    public function getByAlpha3(string $alpha3): ?Language
+    /**
+     * @return Language|null
+     */
+    public function getByAlpha3(string $alpha3)
     {
         $language = null;
 

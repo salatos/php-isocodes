@@ -33,7 +33,7 @@ class IsoCodesFactory
      *
      * This may require a lot of file read operations.
      */
-    public const OPTIMISATION_MEMORY = 1;
+    const OPTIMISATION_MEMORY = 1;
 
     /**
      * Entire database loaded into memory from single JSON file once.
@@ -46,7 +46,7 @@ class IsoCodesFactory
      *
      * This may require a lot of RAM for storing all entries.
      */
-    public const OPTIMISATION_IO = 2;
+    const OPTIMISATION_IO = 2;
 
     /**
      * Path to directory with databases

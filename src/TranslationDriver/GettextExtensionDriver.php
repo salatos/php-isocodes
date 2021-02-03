@@ -6,7 +6,7 @@ namespace Sokil\IsoCodes\TranslationDriver;
 
 class GettextExtensionDriver implements TranslationDriverInterface
 {
-    public function configureDirectory(string $isoNumber, string $directory): void
+    public function configureDirectory(string $isoNumber, string $directory)
     {
         // add gettext domain
         \bindtextdomain(
@@ -25,7 +25,7 @@ class GettextExtensionDriver implements TranslationDriverInterface
      *
      * @param string $locale
      */
-    public function setLocale(string $locale): void
+    public function setLocale(string $locale)
     {
         $fullLocaleName = sprintf('%s.UTF-8', $locale);
 

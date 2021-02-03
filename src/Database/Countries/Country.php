@@ -40,7 +40,7 @@ class Country
     private $numericCode;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $officialName;
 
@@ -55,7 +55,7 @@ class Country
         string $alpha2,
         string $alpha3,
         string $numericCode,
-        ?string $officialName = null
+        string $officialName = null
     ) {
         $this->translator = $translator;
         $this->name = $name;
@@ -97,7 +97,10 @@ class Country
         return $this->localName;
     }
 
-    public function getOfficialName(): ?string
+    /**
+     * @return string|null
+     */
+    public function getOfficialName()
     {
         return $this->officialName;
     }

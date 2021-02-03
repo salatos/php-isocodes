@@ -49,8 +49,9 @@ class Subdivisions extends AbstractNotPartitionedDatabase implements Subdivision
 
     /**
      * @param string $subdivisionCode in format "alpha2country-subdivision", e.g. "UA-43"
+     * @return Subdivision|null
      */
-    public function getByCode(string $subdivisionCode): ?Subdivision
+    public function getByCode(string $subdivisionCode)
     {
         return $this->find('code', $subdivisionCode);
     }

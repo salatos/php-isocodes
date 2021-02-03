@@ -10,8 +10,9 @@ interface SubdivisionsInterface extends \Iterator, \Countable
 {
     /**
      * @param string $subdivisionCode in format "alpha2country-subdivision", e.g. "UA-43"
+     * @return Subdivision|null
      */
-    public function getByCode(string $subdivisionCode): ?Subdivision;
+    public function getByCode(string $subdivisionCode);
 
     /**
      * @param string $alpha2CountryCode e.g. "UA"

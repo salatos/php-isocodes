@@ -49,12 +49,18 @@ class Countries extends AbstractNotPartitionedDatabase
         ];
     }
 
-    public function getByAlpha2(string $alpha2): ?Country
+    /**
+     * @return Country|null
+     */
+    public function getByAlpha2(string $alpha2)
     {
         return $this->find('alpha_2', $alpha2);
     }
 
-    public function getByAlpha3(string $alpha3): ?Country
+    /**
+     * @return Country|null
+     */
+    public function getByAlpha3(string $alpha3)
     {
         return $this->find('alpha_3', $alpha3);
     }
@@ -69,7 +75,7 @@ class Countries extends AbstractNotPartitionedDatabase
      *
      * @throws \TypeError
      */
-    public function getByNumericCode($code): ?Country
+    public function getByNumericCode($code)
     {
         if (!is_numeric($code)) {
             throw new \TypeError('Argument must be int or string');

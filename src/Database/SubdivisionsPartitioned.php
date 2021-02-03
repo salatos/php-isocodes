@@ -35,14 +35,15 @@ class SubdivisionsPartitioned extends AbstractPartitionedDatabase implements Sub
 
     /**
      * @param string $subdivisionCode in format "alpha2country-subdivision", e.g. "UA-43"
+     * @return Subdivision|null
      */
-    public function getByCode(string $subdivisionCode): ?Subdivision
+    public function getByCode(string $subdivisionCode)
     {
         if (strpos($subdivisionCode, '-') === false) {
             return null;
         }
 
-        [$alpha2CountryCode] = explode('-', $subdivisionCode);
+        list($alpha2CountryCode) = explode('-', $subdivisionCode);
 
         return $this->getAllByCountryCode($alpha2CountryCode)[$subdivisionCode] ?? null;
     }

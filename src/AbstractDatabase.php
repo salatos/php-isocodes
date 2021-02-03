@@ -15,12 +15,12 @@ abstract class AbstractDatabase implements \Iterator, \Countable
     /**
      * Default ath ISO databases
      */
-    public const DATABASE_PATH = 'databases';
+    const DATABASE_PATH = 'databases';
 
     /**
      * Default path to gettext localised messages
      */
-    public const MESSAGES_PATH = 'messages';
+    const MESSAGES_PATH = 'messages';
 
     /**
      * Path to directory with databases
@@ -112,7 +112,7 @@ abstract class AbstractDatabase implements \Iterator, \Countable
     /**
      * Build cluster index for iteration
      */
-    private function loadClusterIndex(): void
+    private function loadClusterIndex()
     {
         // check if cluster index already loaded
         if (!empty($this->clusterIndex)) {
@@ -152,17 +152,20 @@ abstract class AbstractDatabase implements \Iterator, \Countable
         return $this->arrayToEntry(current($this->clusterIndex));
     }
 
-    public function key(): ?int
+    /**
+     * @return int|null
+     */
+    public function key()
     {
         return key($this->clusterIndex);
     }
 
-    public function next(): void
+    public function next()
     {
         next($this->clusterIndex);
     }
 
-    public function rewind(): void
+    public function rewind()
     {
         // initialise cluster index
         $this->loadClusterIndex();
