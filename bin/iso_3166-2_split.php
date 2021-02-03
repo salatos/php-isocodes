@@ -25,7 +25,7 @@ $database = json_decode(file_get_contents(SOURCE_DATABASE_PATH), true);
 $countryAlpha2ToSubdivisionsMap = [];
 
 foreach ($database['3166-2'] as $countrySubdivision) {
-    [$countryAlpha2, $countrySubdivisionCode] = explode('-', $countrySubdivision['code']);
+    list($countryAlpha2, $countrySubdivisionCode) = explode('-', $countrySubdivision['code']);
     $countryAlpha2ToSubdivisionsMap[$countryAlpha2][] = [
         'code' => $countrySubdivision['code'],
         'name' => $countrySubdivision['name'],
